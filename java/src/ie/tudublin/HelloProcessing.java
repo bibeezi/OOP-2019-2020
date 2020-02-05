@@ -73,7 +73,10 @@ public class HelloProcessing extends PApplet
 		triangle(450, 450, 250, 50, 60, 450);
 
 		fill(200, 200, 200);
-		ellipse(250, 250, 170, 100);
+		ellipse(250, 250, 180, mouseY);
+
+		fill(0, 0, 0);
+		ellipse(250, 250, 70, mouseY);
 
 		//mouse x
 		//mouse y

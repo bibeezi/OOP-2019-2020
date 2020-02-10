@@ -27,10 +27,11 @@ public class AirSeaBattle extends PApplet
 	}	
 	*/
 
-	float playerX, playerY, bulletX, bulletY;
+	float playerX, playerY;
 	float playerSpeed = 5;
 	float playerWidth = 40;
 	float halfPlayerWidth = playerWidth / 2;
+	
 
 	float bugX, bugY, bugWidth = 30;
 	float halfBugWidth = bugWidth / 2;
@@ -108,26 +109,16 @@ public class AirSeaBattle extends PApplet
 		}
 		if (key == ' ')
 		{
-			//line(playerX, playerY, playerX, bugY);
-			bullet(playerX, playerY);
+			line(playerX, playerY, playerX, bugY);
 		}
 	}	
 
 	void moveBug()
 	{
 		bugX ++;
-		if( bugX > width + halfBugWidth)
+		if (bugX > width + halfBugWidth)
 		{
 			resetBug();
-		}
-	}
-
-	void bullet(float x, float y)
-	{
-		if ((frameCount % 60) == 0)
-		{
-			fill(34);
-			ellipse(x, y, 10, 10);
 		}
 	}
 

@@ -120,7 +120,7 @@ public class BugZap extends PApplet
 			bugX += random(-5, +5);
 			if (bugX < halfBugWidth )
 			{
-			  bugX = 0;
+			  bugX = halfBugWidth;
 			}
 			
 			if (bugX + halfBugWidth > width)

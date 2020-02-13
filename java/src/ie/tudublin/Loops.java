@@ -44,11 +44,11 @@ public class Loops extends PApplet
 		//pyramid();
 
 		//rainbowCircles2();
-		//rainbowCircles2Sol(); NOT FINISHED
+		//rainbowCircles2Sol(); //NOT FINISHED
 
-		//checkers();
+		checkers();
 
-		gridSol();
+		//gridSol();
 	}
 
 	public void lines()
@@ -194,21 +194,25 @@ public class Loops extends PApplet
 		}
 	}
 
-	// public void rainbowCircles2()
-	// {
-	// 	int colour = 0;
+	public void rainbowCircles2()
+	{
+		int colour = 0;
+		int shift = 0;
+		noStroke();
 		
-		// for(x = 0; x < 500; x += 50)
-		// {
-		// 	for(y = 0; y < 500; y += 50)
-		// 	{
-		// 		fill(colour, 255, 255);
-		// 		ellipse(25 + x, 25 + y, 50, 50);
-		// 		colour += 25;
-		// 	}
-		// 	colour -= 242;	
-		// }
-	// }
+		for(x = 0; x < 500; x += 50)
+		{
+			for(y = 0; y < 500; y += 50)
+			{
+				fill(colour, 255, 255);
+				ellipse(25 + x, 25 + y, 50, 50);
+				colour = colour + 10;
+			}
+			colour = 0;
+			colour = colour + shift;
+			shift = shift + 10;
+		}
+	}
 
 	//week 3 tutorial 13/02/2020
 	public void rainbowCircles2Sol()
@@ -236,23 +240,27 @@ public class Loops extends PApplet
 		}
 	}
 
-	// public void checkers()
-	// {
-	// 	for(x = 0; x < 500; x += 25)
-	// 	{
-	// 		for(y = 0; y < 500; y += 25)
-	// 		{
-	// 			if(y % 10 == 5)
-	// 			{
-	// 				fill(10, 255, 255);
-	// 				rect(x, y, 25, 25);
-	// 			}
-	// 			else
-	// 			{
-	// 				fill(15, 255, 255);
-	// 				rect(x, y, 25, 25);
-	// 			}
-	// 		}
-	// 	}
-	// }
+	public void checkers()
+	{
+		int counter = 2;
+
+		for(x = 0; x < 500; x += 25)
+		{
+			for(y = 0; y < 500; y += 25)
+			{
+				if(counter % 2 == 0)
+				{
+					fill(10, 255, 255);
+					rect(x, y, 25, 25);
+				}
+				else
+				{
+					fill(15, 255, 255);
+					rect(x, y, 25, 25);
+				}
+				counter += 1;
+			}
+			counter += 1;
+		}
+	}
 }

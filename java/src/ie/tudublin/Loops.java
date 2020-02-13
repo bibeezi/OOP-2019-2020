@@ -5,6 +5,7 @@ import processing.core.PApplet;
 public class Loops extends PApplet
 {	
 	public int x, y;
+	float offset = 0;
 
 	public void settings()
 	{
@@ -26,22 +27,28 @@ public class Loops extends PApplet
 	public void draw()
 	{	
 		//background(200,200,200);	
+		background(0);
 
 		//lines();
+		//linesSol();
 
 		//circles();
 
 		//rainbow();
 
 		//rainbowCircles();
+		//rainbowCirclesSol();
 
 		//grid();
 
 		//pyramid();
 
 		//rainbowCircles2();
+		//rainbowCircles2Sol(); NOT FINISHED
 
-		checkers();
+		//checkers();
+
+		gridSol();
 	}
 
 	public void lines()
@@ -59,6 +66,28 @@ public class Loops extends PApplet
 			stroke(0,0,0);
 			line(250,250, 500, y);
 			line (250, 250, 0, y);
+		}
+	}
+
+	//week 3 tutorial 13/02/2020
+	public void linesSol()
+	{
+		stroke(255);
+
+		//int numLines = 100
+		// Using the mouse's x axis to determine
+		// the number of lines
+		int numLines = (int)((mouseX / (float)width) * 30);
+		
+		// value of gap is 3 because numLines is an integer
+		// casting is needed
+		float gap = width / (float)numLines;
+	
+		for(int i = 0; i <= numLines; i++)
+		{
+			float x = i * gap;
+			line(x, 0, width - x, height);
+			line(0, x, width, height - x);
 		}
 	}
 
@@ -93,6 +122,29 @@ public class Loops extends PApplet
 		}
 	}
 
+	//week 3 tutorial 13/02/2020
+	public void rainbowCirclesSol()
+	{
+		int numCircles = (int) (20 * (mouseX / (float)width));
+		float w = width / (float)numCircles;
+		// 2.0 is a double 
+		// 2.0f is a floating point 
+		float radius = w / 2.0f;
+
+		colorMode(HSB);
+
+		float cGap = 255 / (float)numCircles;
+
+		noStroke();
+
+		for(int i = 0; i < numCircles; i++)
+		{
+			float x = radius + (i * w);
+			fill(cGap * i, 255, 255);
+			ellipse(x, height / 2, w, w);
+		}
+	}
+
 	public void grid()
 	{
 		background(0);
@@ -101,6 +153,27 @@ public class Loops extends PApplet
 		{
 			line(x, 50, x, 450);
 			line(50, x, 450, x);
+		}
+	}
+
+	//week 3 tutorial 13/02/2020
+	public void gridSol()
+	{
+		float gap = width * 0.1f;
+
+		colorMode(RGB);
+		stroke(0, 255, 0);
+		textAlign(CENTER, CENTER);
+		
+		for(int i = -5; i <= 5; i++)
+		{
+			float x = map(i, -5, 5, gap, width - gap);
+			float halfGap = gap / 2.0f;
+			line(x, gap, x, height - gap);
+			line(gap, x, width - gap, x);
+			fill(255); // white
+			text(i, x, halfGap);
+			text(i, halfGap, x);
 		}
 	}
 
@@ -137,23 +210,49 @@ public class Loops extends PApplet
 		// }
 	// }
 
-	public void checkers()
+	//week 3 tutorial 13/02/2020
+	public void rainbowCircles2Sol()
 	{
-		for(x = 0; x < 500; x += 25)
+		int numCircles = (int) (20 * (mouseX / (float)width));
+		float w = width / (float)numCircles;
+		// 2.0 is a double 
+		// 2.0f is a floating point 
+		float radius = w / 2.0f;
+
+		colorMode(HSB);
+
+		float cGap = 255 / (float)(numCircles * numCircles);
+
+		noStroke();
+
+		for(int j = 0; j < numCircles; j++)
 		{
-			for(y = 0; y < 500; y += 25)
+			for(int i = 0; i < numCircles; i++)
 			{
-				if(y % 10 == 5)
-				{
-					fill(10, 255, 255);
-					rect(x, y, 25, 25);
-				}
-				else
-				{
-					fill(15, 255, 255);
-					rect(x, y, 25, 25);
-				}
+				float x = radius + (i * w);
+				fill(cGap * i, 255, 255);
+				ellipse(x, height / 2, w, w);
 			}
 		}
 	}
+
+	// public void checkers()
+	// {
+	// 	for(x = 0; x < 500; x += 25)
+	// 	{
+	// 		for(y = 0; y < 500; y += 25)
+	// 		{
+	// 			if(y % 10 == 5)
+	// 			{
+	// 				fill(10, 255, 255);
+	// 				rect(x, y, 25, 25);
+	// 			}
+	// 			else
+	// 			{
+	// 				fill(15, 255, 255);
+	// 				rect(x, y, 25, 25);
+	// 			}
+	// 		}
+	// 	}
+	// }
 }

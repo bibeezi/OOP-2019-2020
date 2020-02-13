@@ -3,11 +3,11 @@ package ie.tudublin;
 public class Main
 {
 
-    public void airSeaBattle()
-	{
-		String[] a = {"MAIN"};
-        processing.core.PApplet.runSketch( a, new HelloProcessing());
-    }
+    // public void airSeaBattle()
+	// {
+	// 	String[] a = {"MAIN"};
+    //     processing.core.PApplet.runSketch( a, new HelloProcessing());
+    // }
 
     public void loops()
     {
@@ -41,7 +41,7 @@ public class Main
         */
 
         Main main = new Main();
-		main.airSeaBattle();
+		main.loops();
         
     }
 }

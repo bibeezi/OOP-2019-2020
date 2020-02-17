@@ -2,17 +2,27 @@ package ie.tudublin;
 
 public class Cat extends Animal
 {
-    private int numLives = 9;
+    private int numLives;
 
-    public void setNumLives(int lives)
+    public Cat(String name)
     {
-        this.numLives = lives;
+        // Constructor chaining to the superclass
+        super(name);
+        setNumLives(9);        
     }
-    public int getNumLives()
-    {
+
+    // Accessor method for reading the private field
+    public int getNumLives() {
         return numLives;
     }
 
+    // Accessor method for writing to the private field
+    public void setNumLives(int numLives) {
+        this.numLives = numLives;
+    }
+
+    // Virtual function
+    // Dynamic function binding
     public void speak()
     {
         System.out.println("Meow!");

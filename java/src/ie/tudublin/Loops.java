@@ -32,11 +32,19 @@ public class Loops extends PApplet
 	public void loops2()
 	{
 		int numCircles  = (int) (20 * (mouseX / (float) width)) ;
-		
+		// make a variable for hardcoded (magic) numbers
+		// mouseX and width is an integer
+		// 2.0f is a floating point constant
+		// compile error: can't convert a float to an integer
+
 		float w = width / (float) numCircles;
 		float radius = w / 2.0f;
 		colorMode(HSB);
+		// Hue Saturation Brightness
+		
 		float cGap = 255 / (float) (numCircles * numCircles);
+		// 255 / numCircles * numCircles is the colorspace
+
 		noStroke();
 
 		for(int j = 0 ; j < numCircles ; j ++)
@@ -45,12 +53,15 @@ public class Loops extends PApplet
 			{
 				float x = radius + (i * w);
 				float y = radius + (j * w);
-				float c = (cGap * i * j + offset) % 255; 
+				float c = (cGap * i * j + offset) % 255;
+				// range of mod = 0 - 254
+
 				fill(c, 255, 255);
 				ellipse(x, y, w, w);
 			}
 		}
 		offset += mouseY / 250.0f;
+		// magic number - 250.0f;
 	}
 
 	public void loops3()

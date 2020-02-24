@@ -2,11 +2,6 @@ package ie.tudublin;
 
 public class Main
 {
-
-    public void airSeaBattle()
-    {
-
-    }
     public void helloArrays()
 	{
 		String[] a = {"MAIN"};

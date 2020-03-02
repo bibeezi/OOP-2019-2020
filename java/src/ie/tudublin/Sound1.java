@@ -37,6 +37,7 @@ public class Sound1 extends PApplet
 				, 255
 			);
 			line(i, cy, i, cy + ai.left.get(i) * cy);
+
 		}
 	}
 }

@@ -61,6 +61,6 @@ public class SoundMandala extends PApplet
 			average += lerpedSamples[i];  
 		}
 		average /= (float) numSamples;
-		offs = average * 2;-
+		offs = average * 2;
 	}
 }

@@ -8,14 +8,16 @@ import processing.core.PApplet;
 
 public class SoundSynthesis extends PApplet
 {
+    private float[] frequencies = {293.66f, 329.63f, 369.99f, 392.00f, 440.00f, 493.88f, 554.37f, 587.33f
+        , 659.25f, 739.99f, 783.99f, 880.00f, 987.77f, 1108.73f, 1174.66f, 1318.51f, 1479.98f, 1567.98f, 1760.00f, 1975.53f, 2217.46f, 2349.32f};
     Minim minim;
     AudioOutput out;
     Oscil wave;
+    Oscil wave2;
 
     public void settings()
     {
         size(500, 500);
-        
     }
 
     public void setup()
@@ -23,7 +25,7 @@ public class SoundSynthesis extends PApplet
         minim = new Minim(this);
 
         out = minim.getLineOut();
-        wave = new Oscil( 440, 0.5f, Waves.SQUARE );
+        wave = new Oscil( 440, 0.5f, Waves.SINE );
         wave.patch(out);
     }
 
@@ -32,7 +34,6 @@ public class SoundSynthesis extends PApplet
         {
             wave.setFrequency(wave.frequency.getLastValue() + 100);
         }
-        println(wave.frequency.getLastValue());
     }
 
     float offset = 0;
@@ -42,8 +43,9 @@ public class SoundSynthesis extends PApplet
         //wave.setFrequency(random(60, 2000));
         float n = noise(offset);
         wave.setFrequency(
-            map(n, 0, 1, 200, 600)
+            frequencies[(int) map(n, 0, 1, 0, frequencies.length)];
         );
+
         offset += 0.01f;
 
         float cx = width / 2;

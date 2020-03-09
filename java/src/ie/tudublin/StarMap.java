@@ -10,18 +10,19 @@ public class StarMap extends PApplet
 {
     // Arraylist can grow and shrink
     // Generic
-    ArrayList<Star> stars = new ArrayList<Star>(); 
+    ArrayList<Star> stars = new ArrayList<Star>();
+
 
     public void settings()
     {
         size(800, 800);
-
     }
 
     public void setup()
     {
         loadData();
         printStars();
+        drawGrid();
     }
 
     public void loadData()
@@ -39,6 +40,37 @@ public class StarMap extends PApplet
         for(Star s:stars)
         {
             println(s);
+        }
+    }
+
+    public void drawGrid()
+    {
+        background(0);
+
+        float gap = width * 0.1f;
+
+		colorMode(RGB);
+		stroke(0, 0, 255);
+		textAlign(CENTER, CENTER);
+		
+		for(int i = -5; i <= 5; i++)
+		{
+			float x = map(i, -5, 5, gap, width - gap);
+			line(x, gap, x, height - gap); // horizontal lines
+            line(gap, x, width - gap, x); // vertical lines
+            
+            float halfGap = gap / 2.0f;
+            fill(255);
+			text(i, x, halfGap); // horizontal  
+            text(i, halfGap, x); // vertical
+        }
+    }
+
+    public void drawStars()
+    {
+        for(Star s:stars)
+        {
+            
         }
     }
 

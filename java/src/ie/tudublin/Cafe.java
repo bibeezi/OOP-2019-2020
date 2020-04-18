@@ -83,7 +83,7 @@ public class Cafe extends PApplet
             text(p.getName(), left + 10, y + ( h/2 ));
 
             textAlign(RIGHT, CENTER);
-            //nf(num, pad left, pad right)
+            //nf(num, pad left, pad right) - number format
             // in this case, 2 decimal digits
             text(nf(p.getPrice(), 0, 2), left + w - 10, y + ( h/2 ));
         }

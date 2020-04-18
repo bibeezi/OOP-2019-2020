@@ -54,12 +54,12 @@ public class ArraysExample extends PApplet
 		}
 		println(months[maxIndex] + " had the maximum rainfall of " + rainFall[maxIndex]);
 
-		// You can also calculate the minimum and max of an arry this way:
+		// You can also calculate the minimum and max of an array this way:
 		// Note the array is of type Float not float
-		// Float are objects float is a primitive type
+		// Float are objects, float is a primitive type
 		Float[] floatArray = {10.0f, 5.0f, 20.0f};
-		float min = Collections.min(Arrays.asList(floatArray)); 
-        float max = Collections.max(Arrays.asList(floatArray));
+		//float min = Collections.min(Arrays.asList(floatArray)); 
+        //float max = Collections.max(Arrays.asList(floatArray));
 	}
 
 	void drawBarChart()

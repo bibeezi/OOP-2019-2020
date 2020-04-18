@@ -93,9 +93,9 @@ public class Star
 
     // Default constructor
     // Chain to the other constructor
-    // If no default constructor, Java will make one for u
+    // If no default constructor, Java will make one for you
     // Once you add a constructor, you dont get the 
-    // default one for free
+    // default one
     public Star()
     {
         this("", false, 0, 0, 0, 0, 0);

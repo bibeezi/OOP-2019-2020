@@ -79,7 +79,7 @@ public class Sound3 extends PApplet
 	{	
 		background(0);		
 		stroke(255);
-		float cy = height / 2;
+		//float cy = height / 2;
 		float sum = 0;
 		for(int i = 0 ; i < as.bufferSize() ; i ++)
 		{

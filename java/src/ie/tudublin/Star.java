@@ -124,7 +124,7 @@ public class Star
 
         //the white cross
         pa.stroke(255, 255, 0);
-        pa.line(x, y -5, x, y + 5);
+        pa.line(x, y - 5, x, y + 5);
         pa.line(x - 5, y, x + 5, y);
 
         //the circle

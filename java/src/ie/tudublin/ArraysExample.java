@@ -1,7 +1,7 @@
 package ie.tudublin;
 
-import java.util.Arrays; 
-import java.util.Collections; 
+// import java.util.Arrays; 
+// import java.util.Collections; 
 
 import processing.core.PApplet;
 
@@ -57,7 +57,7 @@ public class ArraysExample extends PApplet
 		// You can also calculate the minimum and max of an array this way:
 		// Note the array is of type Float not float
 		// Float are objects, float is a primitive type
-		Float[] floatArray = {10.0f, 5.0f, 20.0f};
+		//Float[] floatArray = {10.0f, 5.0f, 20.0f};
 		//float min = Collections.min(Arrays.asList(floatArray)); 
         //float max = Collections.max(Arrays.asList(floatArray));
 	}

@@ -118,7 +118,7 @@ public class Main
 
     }
     
-    public static void main(String[] arg)
+    public static void main(String[] args)
     {
         Main main = new Main();
 		main.illusion1();        
